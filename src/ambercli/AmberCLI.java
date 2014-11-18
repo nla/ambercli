@@ -101,14 +101,13 @@ public class AmberCLI {
 		ConsoleReader jline;
 		try {
 			jline = new ConsoleReader();
-			final FileHistory history = new FileHistory(new java.io.File(System.getenv("user.home"), ".ambercli_history"));
+			final FileHistory history = new FileHistory(new java.io.File(System.getProperty("user.home"), ".ambercli_history"));
 			jline.setHistory(history);
 			jline.setHistoryEnabled(true);
 			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 				@Override
 				public void run() {
 					try {
-						System.out.println("Flushing...");
 						history.flush();
 					} catch (IOException e) {
 						e.printStackTrace();
