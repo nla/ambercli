@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"/..
+
+if [ ! -f $HOME/.m2/repository/jline/jline/2.12/jline-2.12.jar ] || [ ! -f target/classes/ambercli/AmberCLI.class ]; then
+  mvn compile
+fi
+source <(grep '^export AMBER_' /opt/jetty/conf/banjo.conf)
+export CLASSPATH="$(dirname "$0")"/../target/classes:/apps/banjo/ROOT/WEB-INF/lib/'*':$HOME/.m2/repository/jline/jline/2.12/jline-2.12.jar
+exec java -Xmx256m ambercli.AmberCLI "$@" 
