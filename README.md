@@ -47,6 +47,6 @@ js> x = db.findWork("nla.obj-7617824")
 vertex id:761782 {bibId:1299, bibLevel:Part, digitalStatusDate:Mon Nov 17 10:46:35 EST 2014, copyrightPolicy:Out of Copyright, form:Book, accessConditions:Unrestricted, subType:page, collection:nla.map, title:Zum Thema Sprache und Logik : Ergebnisse einer interdisziplinaren Diskussion, digitalStatus:Digitised, type:Page}-761813 start:761865 end:0
 js> x.countCopies()
 1
-js> x.getParent().getObjId()
+js> x.parent.objId
 nla.obj-7614582
 ```
