@@ -10,12 +10,11 @@ import java.util.List;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 import jline.console.ConsoleReader;
 import jline.console.history.FileHistory;
 
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.cj.jdbc.MysqlDataSource;
 import com.tinkerpop.blueprints.Vertex;
 
 import amberdb.AmberDb;
@@ -23,7 +22,6 @@ import amberdb.AmberSession;
 import amberdb.model.Copy;
 import amberdb.model.File;
 import amberdb.model.Node;
-import amberdb.model.Section;
 import amberdb.model.Work;
 import static java.lang.System.*;
 
